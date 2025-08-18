@@ -2,20 +2,7 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ] 
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-name: CI/CD Pipeline
-
-on:
-  push:
-    branches: [ "main" ] 
+    branches: [ "main" ]
 
 jobs:
   build-and-deploy:
@@ -74,3 +61,4 @@ jobs:
           kubectl rollout status deployment/backend -n kiii-project
           kubectl rollout status deployment/frontend -n kiii-project
           kubectl get pods -n kiii-project
+
