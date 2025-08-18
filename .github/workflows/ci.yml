@@ -40,14 +40,15 @@ jobs:
         with:
           version: 'latest'
 
-      - name: Configure kubeconfig
-        run: |
+
+     - name: Configure kubeconfig
+       run: |
+          mkdir -p $HOME/.kube
           echo "${{ secrets.KUBECONFIG_CONTENT }}" > $HOME/.kube/config
           chmod 600 $HOME/.kube/config
 
-      - name: Deploy to Kubernetes
-        run: |
-          kubectl apply -f k8s/namespace.yaml
+     - name: Deploy to Kubernetes
+       run: |
           kubectl apply -f k8s/mongo-secret.yaml
           kubectl apply -f k8s/database-statefulset.yaml
           kubectl apply -f k8s/backend-deployment.yaml
