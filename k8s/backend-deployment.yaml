@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: <DOCKERHUB_USERNAME>/backend:latest
+        image: janagogs/backend:latest
         ports:
         - containerPort: 8080
         env:

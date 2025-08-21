@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: <DOCKERHUB_USERNAME>/frontend:latest
+        image: janagogs/frontend:latest
         ports:
         - containerPort: 80
 
